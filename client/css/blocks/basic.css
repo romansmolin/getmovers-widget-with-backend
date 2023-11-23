@@ -1,0 +1,124 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+  font-size: 24px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #263238;
+  pointer-events: none;
+}
+
+p {
+  font-size: 16px;
+  color: #263238;
+  font-weight: 600;
+  opacity: 0.5;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.container {
+    max-width: 1000px; /* Maximum width */
+    width: 90%; /* Responsive width */
+    margin: 0 auto; /* Centering horizontally */
+    position: relative; /* Relative positioning inside flex container */
+}
+
+#form-container {
+  width: 60%;
+  padding: 20px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+  margin: 0 auto;
+}
+
+.form-step {
+  display: none;
+}
+
+.active-step {
+  display: block;
+  width: 100%;
+}
+
+/* BASIC STYLES END*/
+
+/* BACK BTN */
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    color: #263238;
+    font-weight: bold;
+    gap: 6px;
+    cursor: pointer;
+    border: none;
+    margin: 15px auto 0px auto;
+    background-color: transparent;
+}
+
+.back-btn svg {
+    position: relative;
+    transition: transform 0.3s;
+    opacity: 0.5;
+    width: 15px;
+    height: 9px;
+}
+
+.back-btn p {
+    opacity: 0.5;
+    font-weight: 600;
+}
+
+.back-btn:hover p {
+    color: #dc3545;
+    opacity: 1;
+}
+
+.back-btn:hover svg {
+    opacity: 1;
+    transform: translateX(-3px);
+}
+
+.back-btn:hover svg path {
+    fill: #dc3545;
+}
+
+
+/* ERRORS */
+
+.zip-code-error {
+    text-align: end;
+    margin-top: -10px;
+    color: #DC3545;
+    font-weight: 600;
+}
+
+
+.iti {
+    width: 100%;
+}
+
+.phone-number-part {
+    color: #263238;
+    text-decoration: none; /* Prevent underline if it's applied */
+    pointer-events: none;
+}

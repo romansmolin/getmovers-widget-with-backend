@@ -1,0 +1,25 @@
+.final-page-container .cta-button{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.final-page-container .cta-button a {
+    text-align: center;
+    width: 350px;
+    margin: 0 auto;
+    background-color: #dc3545;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #ffffff;
+    padding: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.final-page-container .cta-button a:hover {
+    background-color: #b51827;
+}

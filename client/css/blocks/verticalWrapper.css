@@ -1,0 +1,77 @@
+/* VERTICAL WRAPPER */
+.vertical__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 44px;
+}
+/* VERTICAL WRAPPER END*/
+
+.vertical__wrapper .vertical__wrapper__block {
+  border: 0.1px solid #afc1c9;
+  height: 100px;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  flex: 1;
+  position: relative;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px ;
+  background-color: #ffffff;
+}
+
+.vertical__wrapper .vertical__wrapper__block p {
+  opacity: 1;
+}
+
+.vertical__wrapper .vertical__wrapper__block svg {
+  position: relative;  
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.3s, right 0.3s;
+}
+
+.vertical__wrapper .vertical__wrapper__block svg path {
+    fill: #263238;
+}
+
+.vertical__wrapper .vertical__wrapper__block:not(:last-child) {
+    border-bottom: none;
+}
+
+.vertical__wrapper .vertical__wrapper__block:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.vertical__wrapper .vertical__wrapper__block:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.vertical__wrapper .vertical__wrapper__block:hover {
+    border-color: #dc3545;
+}
+
+.vertical__wrapper .vertical__wrapper__block:hover + button {
+    border-top-color: #dc3545;
+}
+
+.vertical__wrapper .vertical__wrapper__block:hover p {
+    color: #dc3545;
+}
+
+.vertical__wrapper .vertical__wrapper__block:hover svg {
+    opacity: 1;
+    right: 8px;
+}
+
+.vertical__wrapper .vertical__wrapper__block:hover svg path {
+    fill: #dc3545;
+}

@@ -1,0 +1,107 @@
+/* FORM INPUTS STYLES */
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.input-container .input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-container .input-wrapper input {
+  width: 100%;
+}
+
+.input-container .input-wrapper .input-icon {
+    position: absolute;
+    top: 54%;
+    transform: translateY(-50%);
+    right: 15px;
+}
+
+
+.input-container input {
+  border: 0.1px solid #afc1c9;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.input-container input::placeholder {
+  font-size: 16px;
+  color: #263238;
+  font-weight: 600;
+  opacity: 0.5;
+}
+
+/* FORM INPUTS STYLES END */
+
+/* FORM BUTTONS STYLES */
+.input-container button.classic {
+  text-align: center;
+  background-color: #dc3545;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.input-container button.classic svg {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s, right 0.3s;
+}
+
+.input-container button.classic:hover {
+  background-color: #b51827;
+}
+
+.input-container button.classic:hover svg {
+  right: 15px;
+  opacity: 1;
+}
+/* FORM BUTTONS STYLES END*/
+
+.disclaimer {
+  margin: 0;
+}
+
+input#phone {
+  width: 100%;
+}
+
+.phone-verification.input-container .otp-input__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.phone-verification.input-container .otp-input__wrapper .otp-input {
+  width: 18%;
+  height: 15px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.phone-verification.input-container
+  .otp-input__wrapper
+  .otp-input::-webkit-inner-spin-button,
+.phone-verification.input-container
+  .otp-input__wrapper
+  .otp-input::-webkit-outer-spin-button {
+  appearance: none;
+}
