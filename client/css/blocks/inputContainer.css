@@ -112,7 +112,7 @@ input#phone {
   font-weight: 600;
   border-radius: 0px;
   font-family: "Plus Jakarta Sans", sans-serif;
-  padding-left: 0px;
+  padding: 0px;
 }
 
 .phone-verification.input-container .otp-input__wrapper .otp-input.error {
