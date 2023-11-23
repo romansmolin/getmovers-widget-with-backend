@@ -2,9 +2,12 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
-const accountSid = "ACe09a0aec812ea344955280e20a5ea343";
-const authToken = "75b78e01d3942420b4a7712c81c6dbea";
-const verifySid = "VA716ca0050089a961f658463dacc18029";
+require('dotenv').config();
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const verifySid = process.env.TWILIO_VERIFY_SID;
+
 const client = require("twilio")(accountSid, authToken);
 
 app.use(express.static(path.resolve(__dirname, "client")));
