@@ -8,6 +8,11 @@
 
   #form-container {
     width: 80%;
+    padding: 50px 22px;
+  }
+
+  .subtitle {
+    font-size: 14px;
   }
 
   .horizontal__wrapper {
@@ -105,7 +110,7 @@
   }
 
   .vertical__wrapper .vertical__wrapper__block {
-    padding: 5px;
+    padding: 23px;
     display: flex;
     justify-content: center;
   }
@@ -119,29 +124,20 @@
   }
 
   .phone-verification.input-container .otp-input__wrapper .otp-input {
-    width: 10%;
+    width: 20%;
   }
 
   .disclaimer {
     font-size: 14px;
   }
 
-  .final-page-container p {
+  .final-page-container .final-message {
     font-size: 14px;
+    width: 348px;
+    margin-top: 13px;
   }
 
   .final-page-container .cta-button {
     margin-top: 25px;
   }
-
-  .final-page-container .cta-button a {
-    width: auto;
-    margin: unset;
-  }
-}
-
-@media (max-width: 991.98px) {
-}
-
-@media (max-width: 1199.98px) {
 }

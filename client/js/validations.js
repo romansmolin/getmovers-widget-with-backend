@@ -130,6 +130,10 @@ function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
 
 async function validateOTP(currentStep, nextStep) {
   const otp = collectOTP();
+  const otpInputs = document.querySelectorAll('.otp-input')
+  let phoneInputError = document.querySelector(
+    `.zip-code-error.${currentStep}`
+  );
 
   if (otp && otp.length === 4) {
     try {
@@ -147,10 +151,14 @@ async function validateOTP(currentStep, nextStep) {
         goToStep(nextStep);
       } else {
         console.error("Invalid OTP code");
+        phoneInputError.textContent = "Please enter valid PIN code."
+        otpInputs.forEach((input) => {
+          input.classList.add('error')
+        })
       }
     } catch (error) {
       console.error("Error:", error);
     }
-  }
+  } 
 }
 

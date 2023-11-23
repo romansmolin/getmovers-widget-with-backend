@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  margin-top: 44px;
+  margin-top: 42px;
 }
 /* VERTICAL WRAPPER END*/
 
@@ -22,7 +22,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 30px ;
+  padding: 35px 30px ;
   background-color: #ffffff;
 }
 

@@ -1,17 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap");
+
 html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h2 {
@@ -19,31 +21,36 @@ h2 {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #263238;
   pointer-events: none;
+  margin: 0;
 }
-
 p {
   font-size: 16px;
   color: #263238;
   font-weight: 600;
   opacity: 0.5;
   font-family: "Plus Jakarta Sans", sans-serif;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 7px;
 }
 
 a {
-    text-decoration: none;
-    font-weight: 600;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 .container {
-    max-width: 1000px; /* Maximum width */
-    width: 90%; /* Responsive width */
-    margin: 0 auto; /* Centering horizontally */
-    position: relative; /* Relative positioning inside flex container */
+  max-width: 1000px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
 }
 
 #form-container {
-  width: 60%;
-  padding: 20px;
+  width: 91.2%;
+  padding: 40px 44px;
   border-radius: 4px;
   text-align: center;
   background-color: rgb(243, 243, 243);
@@ -64,61 +71,59 @@ a {
 /* BACK BTN */
 
 .back-btn {
-    display: flex;
-    align-items: center;
-    color: #263238;
-    font-weight: bold;
-    gap: 6px;
-    cursor: pointer;
-    border: none;
-    margin: 15px auto 0px auto;
-    background-color: transparent;
+  display: flex;
+  align-items: center;
+  color: #263238;
+  font-weight: bold;
+  gap: 6px;
+  cursor: pointer;
+  border: none;
+  margin: 32px auto 0px auto;
+  background-color: transparent;
 }
 
 .back-btn svg {
-    position: relative;
-    transition: transform 0.3s;
-    opacity: 0.5;
-    width: 15px;
-    height: 9px;
+  position: relative;
+  transition: transform 0.3s;
+  opacity: 0.5;
+  width: 15px;
+  margin-top: 2px;  
 }
 
 .back-btn p {
-    opacity: 0.5;
-    font-weight: 600;
+  opacity: 0.5;
+  font-weight: 600;
 }
 
 .back-btn:hover p {
-    color: #dc3545;
-    opacity: 1;
+  color: #dc3545;
+  opacity: 1;
 }
 
 .back-btn:hover svg {
-    opacity: 1;
-    transform: translateX(-3px);
+  opacity: 1;
+  transform: translateX(-3px);
 }
 
 .back-btn:hover svg path {
-    fill: #dc3545;
+  fill: #dc3545;
 }
-
 
 /* ERRORS */
 
 .zip-code-error {
-    text-align: end;
-    margin-top: -10px;
-    color: #DC3545;
-    font-weight: 600;
+  text-align: end;
+  margin-top: -10px;
+  color: #dc3545;
+  font-weight: 600;
 }
 
-
 .iti {
-    width: 100%;
+  width: 100%;
 }
 
 .phone-number-part {
-    color: #263238;
-    text-decoration: none; /* Prevent underline if it's applied */
-    pointer-events: none;
+  color: #263238;
+  text-decoration: none;
+  pointer-events: none;
 }

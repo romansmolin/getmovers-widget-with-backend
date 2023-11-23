@@ -1,5 +1,15 @@
+.final-page-container h2 {
+    margin-top: 30px;
+}
+
+.final-page-container .final-message {
+    width: 462px;
+    margin: 0 auto;
+    margin-top: 8px;
+}
+
 .final-page-container .cta-button{
-    margin-top: 40px;
+    margin-top: 29px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,8 +17,8 @@
 
 .final-page-container .cta-button a {
     text-align: center;
-    width: 350px;
-    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #dc3545;
     border: none;
     font-size: 20px;
