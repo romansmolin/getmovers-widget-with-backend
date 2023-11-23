@@ -23,6 +23,7 @@ h2 {
   pointer-events: none;
   margin: 0;
 }
+
 p {
   font-size: 16px;
   color: #263238;
@@ -30,6 +31,7 @@ p {
   opacity: 0.5;
   font-family: "Plus Jakarta Sans", sans-serif;
   margin: 0;
+  line-height: 20px;
 }
 
 .subtitle {
@@ -87,7 +89,7 @@ a {
   transition: transform 0.3s;
   opacity: 0.5;
   width: 15px;
-  margin-top: 2px;  
+  margin-top: 2px;
 }
 
 .back-btn p {
@@ -126,4 +128,11 @@ a {
   color: #263238;
   text-decoration: none;
   pointer-events: none;
+}
+.input-from-step-2 {
+    display: inline-block;
+}
+
+#step-4 .input-from-step-2::first-letter {
+  text-transform: uppercase;
 }
