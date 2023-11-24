@@ -35,7 +35,6 @@ function collectOTP() {
 }
 
 function validateZipCode(currentStep, nextStep, fromButtonClick = false) {
-  // Get references to elements using their IDs and classes
   const zipCodeInput = document.getElementById(`zipCode-${currentStep}`);
   const zipCodeError = document.querySelector(`.zip-code-error.${currentStep}`);
   const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
@@ -43,18 +42,15 @@ function validateZipCode(currentStep, nextStep, fromButtonClick = false) {
   if (zipCodeInput.value.length !== 5) {
     zipCodeError.textContent = "Please enter a valid 5-digit zip code";
 
-    // Set the validation icon for failure
     setValidationIcon(inputIcon, false);
 
     return false;
   }
 
-  // Clear the zip code error message
   zipCodeError.textContent = "";
 
   setValidationIcon(inputIcon, true);
 
-  // Proceed to the next step only if the action comes from the button click
   if (fromButtonClick) {
     updateZipCode(zipCodeInput.value, currentStep);
     goToStep(nextStep);
@@ -87,7 +83,6 @@ function validateEmail(currentStep, nextStep, fromButtonClick = false) {
   }
 }
 
-// Validate phone number
 function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
   const phoneInputError = document.querySelector(
     `.zip-code-error.${currentStep}`
@@ -105,13 +100,12 @@ function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
   setValidationIcon(inputIcon, true);
 
   if (fromButtonClick) {
-    sendVerificationCode(phoneNumber); // Call the function to send verification code
+    sendVerificationCode(phoneNumber); 
     updatePhoneNumber(phoneNumber);
     goToStep(nextStep);
   }
 }
 
-// Validate OTP
 async function validateOTP(currentStep, nextStep) {
   const otp = collectOTP();
   const otpInputs = document.querySelectorAll(".otp-input");
@@ -121,7 +115,7 @@ async function validateOTP(currentStep, nextStep) {
   const phoneNumber = phoneInput.getNumber();
 
   if (otp && otp.length === 4) {
-    const isOTPValid = await confirmOTP(phoneNumber, otp); // Call the function to confirm OTP code
+    const isOTPValid = await confirmOTP(phoneNumber, otp); 
 
     if (isOTPValid) {
       otpInputs.forEach((input) => {
