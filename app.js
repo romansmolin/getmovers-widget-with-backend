@@ -21,6 +21,8 @@ app.listen(3000, () => {
   console.log(`Server is running on port 3000`);
 });
 
+// SEND OTP CODE ENDPOINT
+
 app.post("/send-verification", (req, res) => {
   const phoneNumber = req.body.phone;
   client.verify
@@ -33,6 +35,8 @@ app.post("/send-verification", (req, res) => {
       res.status(500).json({ success: false, error: error.message });
     });
 });
+
+// VERIFY OTP CODE ENDPOINT
 
 app.post("/confirm-otp-code", (req, res) => {
   const otpCode = req.body.code;

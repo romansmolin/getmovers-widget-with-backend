@@ -87,78 +87,53 @@ function validateEmail(currentStep, nextStep, fromButtonClick = false) {
   }
 }
 
+// Validate phone number
 function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
-  let phoneInputError = document.querySelector(
+  const phoneInputError = document.querySelector(
     `.zip-code-error.${currentStep}`
   );
-  let inputIcon = document.querySelector(`.input-icon.${currentStep}`);
+  const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
+  const phoneNumber = phoneInput.getNumber();
 
   if (!phoneInput.isValidNumber()) {
-    phoneInputError.textContent = "Please enter valid phone number.";
-
+    phoneInputError.textContent = "Please enter a valid phone number.";
     setValidationIcon(inputIcon, false);
-
     return false;
   }
 
   phoneInputError.textContent = "";
-
   setValidationIcon(inputIcon, true);
 
   if (fromButtonClick) {
-    updatePhoneNumber(phoneInput.getNumber());
-
-    fetch("/send-verification", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ phone: phoneInput.getNumber() }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Verification sent:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-
-    console.log(formData);
+    sendVerificationCode(phoneNumber); // Call the function to send verification code
+    updatePhoneNumber(phoneNumber);
     goToStep(nextStep);
   }
 }
 
+// Validate OTP
 async function validateOTP(currentStep, nextStep) {
   const otp = collectOTP();
-  const otpInputs = document.querySelectorAll('.otp-input')
-  let phoneInputError = document.querySelector(
+  const otpInputs = document.querySelectorAll(".otp-input");
+  const phoneInputError = document.querySelector(
     `.zip-code-error.${currentStep}`
   );
+  const phoneNumber = phoneInput.getNumber();
 
   if (otp && otp.length === 4) {
-    try {
-      const response = await fetch("/confirm-otp-code", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ phone: phoneInput.getNumber(), code: otp }),
+    const isOTPValid = await confirmOTP(phoneNumber, otp); // Call the function to confirm OTP code
+
+    if (isOTPValid) {
+      otpInputs.forEach((input) => {
+        input.classList.remove("error");
       });
-      const data = await response.json();
-
-      if (data.valid) {
-        console.log("Verification code is approved");
-        goToStep(nextStep);
-      } else {
-        console.error("Invalid OTP code");
-        phoneInputError.textContent = "Please enter valid PIN code."
-        otpInputs.forEach((input) => {
-          input.classList.add('error')
-        })
-      }
-    } catch (error) {
-      console.error("Error:", error);
+      phoneInputError.textContent = "";
+      goToStep(nextStep);
+    } else {
+      otpInputs.forEach((input) => {
+        input.classList.add("error");
+      });
+      phoneInputError.textContent = "Please enter a valid PIN code.";
     }
-  } 
+  }
 }
-

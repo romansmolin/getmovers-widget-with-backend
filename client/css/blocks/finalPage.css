@@ -1,35 +1,39 @@
 .final-page-container h2 {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .final-page-container .final-message {
-    width: 462px;
-    margin: 0 auto;
-    margin-top: 8px;
+  width: 462px;
+  margin: 0 auto;
+  margin-top: 8px;
 }
 
-.final-page-container .cta-button{
-    margin-top: 29px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.final-page-container .cta-button {
+  margin-top: 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .final-page-container .cta-button a {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #dc3545;
-    border: none;
-    font-size: 20px;
-    font-weight: 600;
-    color: #ffffff;
-    padding: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #dc3545;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.final-page-container .cta-button p {
+    font-size: 14px;
 }
 
 .final-page-container .cta-button a:hover {
-    background-color: #b51827;
+  background-color: #b51827;
 }

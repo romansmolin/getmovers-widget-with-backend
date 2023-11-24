@@ -1,5 +1,3 @@
-/* FORM INPUTS STYLES */
-
 h2 + p + .input-container {
   margin-top: 25px;
 }
@@ -47,9 +45,6 @@ h2 + .input-container {
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-/* FORM INPUTS STYLES END */
-
-/* FORM BUTTONS STYLES */
 .input-container button.classic {
   background-color: #dc3545;
   border: none;
@@ -82,7 +77,6 @@ h2 + .input-container {
   right: 15px;
   opacity: 1;
 }
-/* FORM BUTTONS STYLES END*/
 
 .disclaimer {
   margin: 0;
