@@ -4,23 +4,69 @@ const phoneInput = window.intlTelInput(phoneInputField, {
 });
 
 function setValidationIcon(inputIcon, isOkey) {
-  let okeyIconPath = "/icons/okey.svg";
-  let notOkeyIconPath = "/icons/not-okey.svg";
+  const iconPath = isOkey ? "/icons/okey.svg" : "/icons/not-okey.svg";
+  const iconAlt = isOkey ? "Validation Passed" : "Validation Failed";
 
   let validationIcon = inputIcon.querySelector("img");
 
   if (!validationIcon) {
-    // If no validation icon exists, create one
     validationIcon = document.createElement("img");
     inputIcon.appendChild(validationIcon);
   }
 
-  if (!isOkey) {
-    validationIcon.src = notOkeyIconPath;
-    validationIcon.alt = "Validation Failed";
-  } else {
-    validationIcon.src = okeyIconPath;
-    validationIcon.alt = "Validation Passed";
+  validationIcon.src = iconPath;
+  validationIcon.alt = iconAlt;
+}
+
+function validateInput(currentStep, nextStep, fromButtonClick, inputId, validationRegex, errorMessage, updateFunction, additionalValidation = () => true) {
+  const inputElement = document.getElementById(inputId);
+  const errorElement = document.querySelector(`.zip-code-error.${currentStep}`);
+  const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
+
+  if (!validationRegex.test(inputElement.value) || (!additionalValidation(inputElement.value) && typeof additionalValidation === 'function')) {
+    errorElement.textContent = errorMessage;
+    setValidationIcon(inputIcon, false);
+    return false;
+  }
+
+  errorElement.textContent = "";
+  setValidationIcon(inputIcon, true);
+
+  if (fromButtonClick) {
+    updateFunction(inputElement.value);
+    goToStep(nextStep);
+  }
+}
+
+function validateZipCode(currentStep, nextStep, fromButtonClick = false) {
+  const validationRegex = /^[0-9]*$/i;
+  const errorMessage = "Please enter a valid 5-digit zip code";
+
+  const additionalValidation = (value) => value.length === 5;
+
+  validateInput(currentStep, nextStep, fromButtonClick, `zipCode-${currentStep}`, validationRegex, errorMessage, updateZipCode, additionalValidation);
+}
+
+function validateEmail(currentStep, nextStep, fromButtonClick = false) {
+  const validationRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+  const errorMessage = "Please enter a valid email";
+
+  validateInput(currentStep, nextStep, fromButtonClick, 'email', validationRegex, errorMessage, updateEmail)
+}
+
+function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
+  const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
+  const phoneNumber = phoneInput.getNumber();
+  const phoneInputError = document.querySelector(`.zip-code-error.${currentStep}`);
+  const isValid = phoneInput.isValidNumber();
+
+  phoneInputError.textContent = isValid ? "" : "Please enter a valid phone number.";
+  setValidationIcon(inputIcon, isValid);
+
+  if (isValid && fromButtonClick) {
+    sendVerificationCode(phoneNumber);
+    updatePhoneNumber(phoneNumber);
+    goToStep(nextStep);
   }
 }
 
@@ -34,85 +80,10 @@ function collectOTP() {
   return otp;
 }
 
-function validateZipCode(currentStep, nextStep, fromButtonClick = false) {
-  const zipCodeInput = document.getElementById(`zipCode-${currentStep}`);
-  const zipCodeError = document.querySelector(`.zip-code-error.${currentStep}`);
-  const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
-  const numbersOnly = /^[0-9]*$/i;
-
-  if (zipCodeInput.value.length !== 5 || !numbersOnly.test(zipCodeInput.value)) {
-    zipCodeError.textContent = "Please enter a valid 5-digit zip code";
-
-    setValidationIcon(inputIcon, false);
-
-    return false;
-  }
-
-  zipCodeError.textContent = "";
-
-  setValidationIcon(inputIcon, true);
-
-  if (fromButtonClick) {
-    updateZipCode(zipCodeInput.value, currentStep);
-    goToStep(nextStep);
-  }
-}
-
-function validateEmail(currentStep, nextStep, fromButtonClick = false) {
-  let emailInput = document.getElementById(`email`);
-  let emailInputError = document.querySelector(
-    `.zip-code-error.${currentStep}`
-  );
-  let inputIcon = document.querySelector(`.input-icon.${currentStep}`);
-  let emailRegex = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
-
-  if (!emailRegex.test(emailInput.value)) {
-    emailInputError.textContent = "Please enter a valid email";
-
-    setValidationIcon(inputIcon, false);
-
-    return false;
-  }
-
-  emailInputError.textContent = "";
-
-  setValidationIcon(inputIcon, true);
-
-  if (fromButtonClick) {
-    updateEmail(emailInput.value);
-    goToStep(nextStep);
-  }
-}
-
-function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
-  const phoneInputError = document.querySelector(
-    `.zip-code-error.${currentStep}`
-  );
-  const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
-  const phoneNumber = phoneInput.getNumber();
-
-  if (!phoneInput.isValidNumber()) {
-    phoneInputError.textContent = "Please enter a valid phone number.";
-    setValidationIcon(inputIcon, false);
-    return false;
-  }
-
-  phoneInputError.textContent = "";
-  setValidationIcon(inputIcon, true);
-
-  if (fromButtonClick) {
-    sendVerificationCode(phoneNumber); 
-    updatePhoneNumber(phoneNumber);
-    goToStep(nextStep);
-  }
-}
-
 async function validateOTP(currentStep, nextStep) {
   const otp = collectOTP();
   const otpInputs = document.querySelectorAll(".otp-input");
-  const phoneInputError = document.querySelector(
-    `.zip-code-error.${currentStep}`
-  );
+  const phoneInputError = document.querySelector(`.zip-code-error.${currentStep}`);
   const phoneNumber = phoneInput.getNumber();
 
   if (otp && otp.length === 4) {

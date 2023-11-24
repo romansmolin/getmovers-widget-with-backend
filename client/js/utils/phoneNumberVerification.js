@@ -1,4 +1,4 @@
-// Function to send phone number for verification
+
 async function sendVerificationCode(phoneNumber) {
   try {
     const response = await fetch("/send-verification", {
@@ -15,7 +15,6 @@ async function sendVerificationCode(phoneNumber) {
   }
 }
 
-// Function to confirm OTP code
 async function confirmOTP(phoneNumber, otp) {
   try {
     const response = await fetch("/confirm-otp-code", {
