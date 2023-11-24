@@ -137,4 +137,9 @@
   .final-page-container .cta-button {
     margin-top: 25px;
   }
+
+  .iti.iti--container {
+    width: unset;
+  }
 }
+
