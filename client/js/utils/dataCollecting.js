@@ -38,3 +38,7 @@ function updatePhoneNumber(phoneNumber) {
 
   formData["phone1"] = phoneNumber;
 }
+
+function updateName(name) {
+    formData["name"] = name;
+}

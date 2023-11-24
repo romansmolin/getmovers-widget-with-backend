@@ -138,6 +138,10 @@
     margin-top: 25px;
   }
 
+  .final-page-container .cta-button p {
+    font-size: 14px;
+  }
+
   .iti__country-list {
     width: 310px;
     overflow-x: hidden;

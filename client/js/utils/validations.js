@@ -54,6 +54,13 @@ function validateEmail(currentStep, nextStep, fromButtonClick = false) {
   validateInput(currentStep, nextStep, fromButtonClick, 'email', validationRegex, errorMessage, updateEmail)
 }
 
+function validateName(currentStep, nextStep, fromButtonClick = false) {
+  const validationRegex = /^[A-Za-z\s'-]+$/;
+  const errorMessage = "Please enter a valid name"
+
+  validateInput(currentStep, nextStep, fromButtonClick, 'name', validationRegex, errorMessage, updateName)
+}
+
 function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
   const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
   const phoneNumber = phoneInput.getNumber();
@@ -102,4 +109,6 @@ async function validateOTP(currentStep, nextStep) {
       phoneInputError.textContent = "Please enter a valid PIN code.";
     }
   }
+
+  console.log(formData)
 }
