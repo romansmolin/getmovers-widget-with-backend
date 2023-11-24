@@ -38,8 +38,9 @@ function validateZipCode(currentStep, nextStep, fromButtonClick = false) {
   const zipCodeInput = document.getElementById(`zipCode-${currentStep}`);
   const zipCodeError = document.querySelector(`.zip-code-error.${currentStep}`);
   const inputIcon = document.querySelector(`.input-icon.${currentStep}`);
+  const numbersOnly = /^[0-9]*$/i;
 
-  if (zipCodeInput.value.length !== 5) {
+  if (zipCodeInput.value.length !== 5 || !numbersOnly.test(zipCodeInput.value)) {
     zipCodeError.textContent = "Please enter a valid 5-digit zip code";
 
     setValidationIcon(inputIcon, false);
