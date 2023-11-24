@@ -1,11 +1,5 @@
 const formData = {};
 
-function handleButtonClick(button, nextStep, updateFunction) {
-  const dataType = button.getAttribute("data-type");
-  updateFunction(dataType);
-  goToStep(nextStep);
-}
-
 // Update the ZIP code based on the current step
 function updateZipCode(zipCode, currentStep) {
   currentStep === "step-1"
