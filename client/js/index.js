@@ -15,12 +15,6 @@ function hideAllSteps() {
   });
 }
 
-function handleButtonClick(button, nextStep, updateFunction) {
-  const dataType = button.getAttribute("data-type");
-  updateFunction(dataType);
-  goToStep(nextStep);
-}
-
 const otpInputs = document.querySelectorAll(".otp-input");
 
 otpInputs.forEach((input, index) => {
