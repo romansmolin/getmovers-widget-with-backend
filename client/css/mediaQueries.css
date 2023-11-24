@@ -138,12 +138,11 @@
     margin-top: 25px;
   }
 
-  .iti.iti--container {
-    width: unset;
+  .iti__country-list {
+    width: 310px;
+    overflow-x: hidden;
   }
+
 }
 
-
-/* width: 310px;
-    overflow-x: hidden; */
 
