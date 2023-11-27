@@ -15,9 +15,14 @@ function hideAllSteps() {
   });
 }
 
-function handleButtonClick(button, nextStep, updateFunction) {
+function handleButtonClick(button, nextStep, currentStep, updateFunction) {
   const dataType = button.getAttribute("data-type");
   updateFunction(dataType);
+
+  gtag('event', `${currentStep}-accomplished`, {
+    'event_label': `${currentStep}-accomplished`,
+  });
+  
   goToStep(nextStep);
 }
 

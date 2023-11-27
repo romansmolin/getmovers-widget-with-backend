@@ -56,11 +56,11 @@
   }
 
   .horizontal__wrapper .horizontal__wrapper__block.with-icon:hover {
-    border-color: #dc3545;
+    border-color: #E4405F;
   }
 
   .horizontal__wrapper .horizontal__wrapper__block.with-icon:hover + button {
-    border-top-color: #dc3545;
+    border-top-color: #E4405F;
     border-left-color: #afc1c9;
   }
 

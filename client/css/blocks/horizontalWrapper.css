@@ -41,7 +41,7 @@
 .horizontal__wrapper .horizontal__wrapper__block.with-icon span {
   font-size: 32px;
   font-weight: bold;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #263238;
 }
 
@@ -60,21 +60,21 @@
 }
 
 .horizontal__wrapper .horizontal__wrapper__block.with-icon:hover {
-  border-color: #dc3545;
+  border-color: #E4405F;
 }
 
 .horizontal__wrapper .horizontal__wrapper__block.with-icon:hover p {
-  color: #dc3545;
+  color: #E4405F;
 }
 
 .horizontal__wrapper .horizontal__wrapper__block.with-icon:hover span {
-  color: #dc3545;
+  color: #E4405F;
 }
 
 .horizontal__wrapper .horizontal__wrapper__block.with-icon:hover svg path {
-  fill: #dc3545;
+  fill: #E4405F;
 }
 
 .horizontal__wrapper .horizontal__wrapper__block.with-icon:hover + button {
-  border-left: 0.1px solid #dc3545;
+  border-left: 0.1px solid #E4405F;
 }

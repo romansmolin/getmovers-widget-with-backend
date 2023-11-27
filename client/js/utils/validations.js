@@ -29,11 +29,22 @@ function validateInput(currentStep, nextStep, fromButtonClick, inputId, validati
     return false;
   }
 
+  if (inputId === "name" && inputElement.value.trim().split(/\s+/).length < 2) {
+    errorElement.textContent = errorMessage;
+    setValidationIcon(inputIcon, false);
+    return false;
+  }
+
   errorElement.textContent = "";
   setValidationIcon(inputIcon, true);
 
   if (fromButtonClick) {
     updateFunction(inputElement.value);
+
+    gtag('event', `${currentStep}-accomplished`, {
+      'event_label': `${currentStep}-accomplished`,
+    });
+
     goToStep(nextStep);
   }
 }
@@ -73,6 +84,11 @@ function validatePhoneNumber(currentStep, nextStep, fromButtonClick = false) {
   if (isValid && fromButtonClick) {
     sendVerificationCode(phoneNumber);
     updatePhoneNumber(phoneNumber);
+
+    gtag('event', `${currentStep}-accomplished`, {
+      'event_label': `${currentStep}-accomplished`,
+    });
+
     goToStep(nextStep);
   }
 }
@@ -94,13 +110,18 @@ async function validateOTP(currentStep, nextStep) {
   const phoneNumber = phoneInput.getNumber();
 
   if (otp && otp.length === 4) {
-    const isOTPValid = await confirmOTP(phoneNumber, otp); 
+    const isOTPValid = await confirmOTP(phoneNumber, otp);
 
     if (isOTPValid) {
       otpInputs.forEach((input) => {
         input.classList.remove("error");
       });
       phoneInputError.textContent = "";
+
+      gtag('event', `${currentStep}-accomplished`, {
+        'event_label': `${currentStep}-accomplished`,
+      });
+
       goToStep(nextStep);
     } else {
       otpInputs.forEach((input) => {

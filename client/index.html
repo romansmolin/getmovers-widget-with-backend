@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/intlTelInput/intlTelInput.css" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPYMC47TK4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config'); // Please, enter your GA ID - gtag('config', 'G-HPCYK45TD8')
+    </script>
     <script src="js/intlTelInput/intlTelInput.min.js"></script>
     <title>Getmovers Widget</title>
   </head>
@@ -32,20 +40,9 @@
               class="classic"
               onclick="validateZipCode('step-1', 2, true)"
             >
-              Get Estimate
-              <svg
-                width="15"
-                height="9"
-                viewBox="0 0 15 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.9325 0.263155L14.3819 2.71253C14.7796 3.12932 15.0015 3.68329 15.0015 4.25941C15.0015 4.83552 14.7796 5.38949 14.3819 5.80628L11.9325 8.25566C11.7567 8.43153 11.5183 8.53037 11.2696 8.53043C11.0209 8.53048 10.7824 8.43176 10.6066 8.25597C10.4307 8.08018 10.3319 7.84173 10.3318 7.59307C10.3317 7.34441 10.4305 7.1059 10.6063 6.93003L12.3438 5.19191L0.9375 5.17753C0.68886 5.17753 0.450403 5.07876 0.274587 4.90294C0.098772 4.72713 0 4.48867 0 4.24003C0 3.99139 0.098772 3.75293 0.274587 3.57712C0.450403 3.4013 0.68886 3.30253 0.9375 3.30253L12.3319 3.31691L10.6063 1.58878C10.4355 1.41197 10.341 1.17515 10.3431 0.929341C10.3453 0.683532 10.4439 0.448395 10.6177 0.274574C10.7915 0.100754 11.0266 0.00215816 11.2724 2.19345e-05C11.5182 -0.0021143 11.7551 0.0923824 11.9319 0.263155H11.9325Z"
-                  fill="#fff"
-                />
-              </svg>
+              Get Estimate »
             </button>
+            <p class="disclaimer">1,596 people requested an estimate!</p>
           </div>
         </div>
 
@@ -58,7 +55,7 @@
               type="button"
               class="horizontal__wrapper__block with-icon"
               data-type="house"
-              onclick="handleButtonClick(this, 3, updatePropertyType)"
+              onclick="handleButtonClick(this, 3, 'step-2', updatePropertyType)"
             >
               <svg
                 width="69"
@@ -80,7 +77,7 @@
               type="button"
               class="horizontal__wrapper__block with-icon"
               data-type="apartment"
-              onclick="handleButtonClick(this, 3, updatePropertyType)"
+              onclick="handleButtonClick(this, 3, 'step-2', updatePropertyType)"
             >
               <svg
                 width="69"
@@ -126,7 +123,7 @@
             <button
               type="button"
               class="horizontal__wrapper__block with-icon"
-              onclick="handleButtonClick(this, 4, updatePropertySize)"
+              onclick="handleButtonClick(this, 4, 'step-3', updatePropertySize)"
               data-type="1 Bedroom"
             >
               <span>1</span>
@@ -135,7 +132,7 @@
             <button
               type="button"
               class="horizontal__wrapper__block with-icon"
-              onclick="handleButtonClick(this, 4, updatePropertySize)"
+              onclick="handleButtonClick(this, 4, 'step-3', updatePropertySize)"
               data-type="2 Bedroom"
             >
               <span>2</span>
@@ -144,7 +141,7 @@
             <button
               type="button"
               class="horizontal__wrapper__block with-icon"
-              onclick="handleButtonClick(this, 4, updatePropertySize)"
+              onclick="handleButtonClick(this, 4, 'step-3', updatePropertySize)"
               data-type="3 Bedroom"
             >
               <span>3</span>
@@ -153,7 +150,7 @@
             <button
               type="button"
               class="horizontal__wrapper__block with-icon"
-              onclick="handleButtonClick(this, 4, updatePropertySize)"
+              onclick="handleButtonClick(this, 4, 'step-3', updatePropertySize)"
               data-type="4+ Bedroom"
             >
               <span>4+</span>
@@ -188,8 +185,8 @@
             <button
               type="button"
               class="vertical__wrapper__block"
-              data-type="I don't have a lot of stuf"
-              onclick="handleButtonClick(this, 5, updateComapreTo)"
+              data-type="I don't have a lot of stuff"
+              onclick="handleButtonClick(this, 5, 'step-4', updateComapreTo)"
             >
               <p>I don't have a lot of stuf</p>
               <svg
@@ -209,7 +206,7 @@
               type="button"
               class="vertical__wrapper__block"
               data-type="I have an average amount"
-              onclick="handleButtonClick(this, 5, updateComapreTo)"
+              onclick="handleButtonClick(this, 5, 'step-4', updateComapreTo)"
             >
               <p>I have an average amount</p>
               <svg
@@ -229,7 +226,7 @@
               type="button"
               class="vertical__wrapper__block"
               data-type="I have a lot of stuff"
-              onclick="handleButtonClick(this, 5, updateComapreTo)"
+              onclick="handleButtonClick(this, 5, 'step-4', updateComapreTo)"
             >
               <p>I have a lot of stuff</p>
               <svg
@@ -249,7 +246,7 @@
               type="button"
               class="vertical__wrapper__block"
               data-type="I am only taking few things"
-              onclick="handleButtonClick(this, 5, updateComapreTo)"
+              onclick="handleButtonClick(this, 5, 'step-4', updateComapreTo)"
             >
               <p>I am only taking few things</p>
               <svg
@@ -269,7 +266,7 @@
               type="button"
               class="vertical__wrapper__block"
               data-type="Not Sure"
-              onclick="handleButtonClick(this, 5, updateComapreTo)"
+              onclick="handleButtonClick(this, 5, 'step-4', updateComapreTo)"
             >
               <p>Not Sure</p>
               <svg
@@ -312,7 +309,7 @@
               type="button"
               class="horizontal__wrapper__block with-icon"
               data-type="As soon as possible"
-              onclick="handleButtonClick(this, 6, updateMovingDate)"
+              onclick="handleButtonClick(this, 6, 'step-5', updateMovingDate)"
             >
               <svg
                 width="55"
@@ -334,7 +331,7 @@
               type="button"
               class="horizontal__wrapper__block with-icon"
               data-type="This month"
-              onclick="handleButtonClick(this, 6, updateMovingDate)"
+              onclick="handleButtonClick(this, 6, 'step-5', updateMovingDate)"
             >
               <svg
                 width="55"
@@ -356,7 +353,7 @@
               type="button"
               class="horizontal__wrapper__block with-icon"
               data-type="Flexible timing"
-              onclick="handleButtonClick(this, 6, updateMovingDate)"
+              onclick="handleButtonClick(this, 6, 'step-5', updateMovingDate)"
             >
               <svg
                 width="36"
@@ -412,19 +409,7 @@
               class="classic"
               onclick="validateZipCode('step-6', 7, true)"
             >
-              Calculate
-              <svg
-                width="15"
-                height="9"
-                viewBox="0 0 15 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.9325 0.263155L14.3819 2.71253C14.7796 3.12932 15.0015 3.68329 15.0015 4.25941C15.0015 4.83552 14.7796 5.38949 14.3819 5.80628L11.9325 8.25566C11.7567 8.43153 11.5183 8.53037 11.2696 8.53043C11.0209 8.53048 10.7824 8.43176 10.6066 8.25597C10.4307 8.08018 10.3319 7.84173 10.3318 7.59307C10.3317 7.34441 10.4305 7.1059 10.6063 6.93003L12.3438 5.19191L0.9375 5.17753C0.68886 5.17753 0.450403 5.07876 0.274587 4.90294C0.098772 4.72713 0 4.48867 0 4.24003C0 3.99139 0.098772 3.75293 0.274587 3.57712C0.450403 3.4013 0.68886 3.30253 0.9375 3.30253L12.3319 3.31691L10.6063 1.58878C10.4355 1.41197 10.341 1.17515 10.3431 0.929341C10.3453 0.683532 10.4439 0.448395 10.6177 0.274574C10.7915 0.100754 11.0266 0.00215816 11.2724 2.19345e-05C11.5182 -0.0021143 11.7551 0.0923824 11.9319 0.263155H11.9325Z"
-                  fill="#fff"
-                />
-              </svg>
+              Calculate »
             </button>
           </div>
           <button type="button" class="back-btn" onclick="goBack(5)">
@@ -464,19 +449,7 @@
               class="classic"
               onclick="validateEmail('step-7', 8, true)"
             >
-              Continue
-              <svg
-                width="15"
-                height="9"
-                viewBox="0 0 15 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.9325 0.263155L14.3819 2.71253C14.7796 3.12932 15.0015 3.68329 15.0015 4.25941C15.0015 4.83552 14.7796 5.38949 14.3819 5.80628L11.9325 8.25566C11.7567 8.43153 11.5183 8.53037 11.2696 8.53043C11.0209 8.53048 10.7824 8.43176 10.6066 8.25597C10.4307 8.08018 10.3319 7.84173 10.3318 7.59307C10.3317 7.34441 10.4305 7.1059 10.6063 6.93003L12.3438 5.19191L0.9375 5.17753C0.68886 5.17753 0.450403 5.07876 0.274587 4.90294C0.098772 4.72713 0 4.48867 0 4.24003C0 3.99139 0.098772 3.75293 0.274587 3.57712C0.450403 3.4013 0.68886 3.30253 0.9375 3.30253L12.3319 3.31691L10.6063 1.58878C10.4355 1.41197 10.341 1.17515 10.3431 0.929341C10.3453 0.683532 10.4439 0.448395 10.6177 0.274574C10.7915 0.100754 11.0266 0.00215816 11.2724 2.19345e-05C11.5182 -0.0021143 11.7551 0.0923824 11.9319 0.263155H11.9325Z"
-                  fill="#fff"
-                />
-              </svg>
+              Continue »
             </button>
             <p class="disclaimer">
               Preferred email to receive your free cost estimate
@@ -519,19 +492,7 @@
               class="classic"
               onclick="validateName('step-8', 9, true)"
             >
-              Continue
-              <svg
-                width="15"
-                height="9"
-                viewBox="0 0 15 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.9325 0.263155L14.3819 2.71253C14.7796 3.12932 15.0015 3.68329 15.0015 4.25941C15.0015 4.83552 14.7796 5.38949 14.3819 5.80628L11.9325 8.25566C11.7567 8.43153 11.5183 8.53037 11.2696 8.53043C11.0209 8.53048 10.7824 8.43176 10.6066 8.25597C10.4307 8.08018 10.3319 7.84173 10.3318 7.59307C10.3317 7.34441 10.4305 7.1059 10.6063 6.93003L12.3438 5.19191L0.9375 5.17753C0.68886 5.17753 0.450403 5.07876 0.274587 4.90294C0.098772 4.72713 0 4.48867 0 4.24003C0 3.99139 0.098772 3.75293 0.274587 3.57712C0.450403 3.4013 0.68886 3.30253 0.9375 3.30253L12.3319 3.31691L10.6063 1.58878C10.4355 1.41197 10.341 1.17515 10.3431 0.929341C10.3453 0.683532 10.4439 0.448395 10.6177 0.274574C10.7915 0.100754 11.0266 0.00215816 11.2724 2.19345e-05C11.5182 -0.0021143 11.7551 0.0923824 11.9319 0.263155H11.9325Z"
-                  fill="#fff"
-                />
-              </svg>
+              Continue »
             </button>
           </div>
           <button type="button" class="back-btn" onclick="goBack(7)">
@@ -571,19 +532,7 @@
               class="classic"
               onclick="validatePhoneNumber('step-9', 10, true)"
             >
-              Continue
-              <svg
-                width="15"
-                height="9"
-                viewBox="0 0 15 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.9325 0.263155L14.3819 2.71253C14.7796 3.12932 15.0015 3.68329 15.0015 4.25941C15.0015 4.83552 14.7796 5.38949 14.3819 5.80628L11.9325 8.25566C11.7567 8.43153 11.5183 8.53037 11.2696 8.53043C11.0209 8.53048 10.7824 8.43176 10.6066 8.25597C10.4307 8.08018 10.3319 7.84173 10.3318 7.59307C10.3317 7.34441 10.4305 7.1059 10.6063 6.93003L12.3438 5.19191L0.9375 5.17753C0.68886 5.17753 0.450403 5.07876 0.274587 4.90294C0.098772 4.72713 0 4.48867 0 4.24003C0 3.99139 0.098772 3.75293 0.274587 3.57712C0.450403 3.4013 0.68886 3.30253 0.9375 3.30253L12.3319 3.31691L10.6063 1.58878C10.4355 1.41197 10.341 1.17515 10.3431 0.929341C10.3453 0.683532 10.4439 0.448395 10.6177 0.274574C10.7915 0.100754 11.0266 0.00215816 11.2724 2.19345e-05C11.5182 -0.0021143 11.7551 0.0923824 11.9319 0.263155H11.9325Z"
-                  fill="#fff"
-                />
-              </svg>
+              Continue »
             </button>
             <p class="disclaimer">
               I agree to receive telephone calls, automated phone calls and/or
@@ -633,18 +582,7 @@
               class="classic"
               onclick="validateOTP('step-10', 11)"
             >
-              Verify
-              <svg
-                width="15"
-                height="9"
-                viewBox="0 0 15 9"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M11.9325 0.263155L14.3819 2.71253C14.7796 3.12932 15.0015 3.68329 15.0015 4.25941C15.0015 4.83552 14.7796 5.38949 14.3819 5.80628L11.9325 8.25566C11.7567 8.43153 11.5183 8.53037 11.2696 8.53043C11.0209 8.53048 10.7824 8.43176 10.6066 8.25597C10.4307 8.08018 10.3319 7.84173 10.3318 7.59307C10.3317 7.34441 10.4305 7.1059 10.6063 6.93003L12.3438 5.19191L0.9375 5.17753C0.68886 5.17753 0.450403 5.07876 0.274587 4.90294C0.098772 4.72713 0 4.48867 0 4.24003C0 3.99139 0.098772 3.75293 0.274587 3.57712C0.450403 3.4013 0.68886 3.30253 0.9375 3.30253L12.3319 3.31691L10.6063 1.58878C10.4355 1.41197 10.341 1.17515 10.3431 0.929341C10.3453 0.683532 10.4439 0.448395 10.6177 0.274574C10.7915 0.100754 11.0266 0.00215816 11.2724 2.19345e-05C11.5182 -0.0021143 11.7551 0.0923824 11.9319 0.263155H11.9325Z"
-                  fill="#fff"
-                />
+              Verify »
               </svg>
             </button>
             <!-- <p class="disclaimer">Entered a wrong number or need a new code? Try again in 54 seconds</p> -->
@@ -681,7 +619,7 @@
                 fill-rule="evenodd"
                 clip-rule="evenodd"
                 d="M53.5 0C54.3284 0 55 0.73319 55 1.63763V8.36237C55 9.26681 54.3284 10 53.5 10C52.6716 10 52 9.26681 52 8.36237V1.63763C52 0.73319 52.6716 0 53.5 0ZM54.5146 18.8494C54.0986 18.0059 52.8975 18.0062 52.4819 18.8494L45.0574 33.9134L45.0573 33.9136C44.4243 35.1981 43.2006 36.0884 41.7852 36.2943L37.8374 36.8688C36.9596 36.9966 36.1445 36.3875 36.0169 35.5084C35.8893 34.6293 36.4976 33.8131 37.3754 33.6853L41.3233 33.1108C41.6922 33.0571 42.0115 32.825 42.1765 32.4901L49.6012 17.4258C51.1953 14.1913 55.801 14.1916 57.3952 17.4256L64.8197 32.4901C64.9847 32.8248 65.3038 33.0571 65.6729 33.111L65.6732 33.111L82.2745 35.5267C85.839 36.0455 87.2621 40.4318 84.6829 42.9495L80.8687 46.6726L91.7676 49.0331C92.1537 49.1167 92.4744 49.3274 92.6918 49.6079L106.536 63.6078C106.944 64.0205 107.098 64.6252 106.937 65.1858C106.777 65.7465 106.327 66.1743 105.764 66.3025L93 69.2075V96.8641C93 98.6441 91.7867 100.188 90.0754 100.585L54.182 108.906L54.1817 108.906C53.6382 109.031 53.0737 109.032 52.5302 108.906L52.5301 108.906L33.2351 104.433C32.3797 104.234 31.8448 103.37 32.0403 102.503C32.2358 101.635 33.0877 101.093 33.943 101.291L52 105.477V88.5981C52 87.7155 52.6716 87 53.5 87C54.3284 87 55 87.7155 55 88.5981V105.41L89.3673 97.4435C89.6336 97.3817 89.8226 97.1414 89.8226 96.8641V69.9306L82.8075 71.5272C81.9543 71.7214 81.1069 71.1794 80.9148 70.3165C80.7228 69.4536 81.2588 68.5967 82.1121 68.4025L90.2072 66.5601C90.4985 66.2171 90.9299 66 91.4113 66C91.6415 66 91.8602 66.0497 92.0577 66.139L102.263 63.8163L90.934 52.3599L71.2645 56.9063C71.1488 56.9478 71.027 56.9764 70.9011 56.9903L56.5585 60.3054L67.9879 71.6877L75.0649 70.1015C75.9197 69.9099 76.7686 70.4447 76.9609 71.2959C77.1533 72.1472 76.6163 72.9926 75.7616 73.1842L67.8322 74.9614C67.3016 75.0804 66.7467 74.9203 66.3621 74.5372L55 63.2219V81.4478C55 82.3051 54.3284 83 53.5 83C52.6716 83 52 82.3051 52 81.4478V63.1512L40.7466 74.5309C40.3626 74.9192 39.8087 75.0815 39.279 74.9609L17.121 69.9178V96.2029C17.121 96.4737 17.3066 96.7082 17.5682 96.7685L26.7869 98.8928C27.627 99.0864 28.1525 99.93 27.9604 100.777C27.7684 101.624 26.9316 102.154 26.0914 101.96L16.8728 99.8358C15.1918 99.4485 14 97.9412 14 96.2029V69.2075L1.23596 66.3025C0.672816 66.1743 0.223236 65.7465 0.0625976 65.1858C-0.0980406 64.6252 0.0557099 64.0205 0.463873 63.6078L14.3026 49.6136C14.5204 49.3288 14.844 49.1148 15.2343 49.0303L26.6417 46.5611L23.2482 43.1111C20.8039 40.6262 22.1526 36.2965 25.5304 35.7845L30.5964 35.0167C31.4283 34.8906 32.2007 35.4918 32.3216 36.3595C32.4425 37.2272 31.8661 38.0328 31.0341 38.1589L25.9683 38.9266C25.0874 39.0602 24.7357 40.1894 25.3731 40.8373L36.7573 52.4113L36.7575 52.4115C37.2261 52.888 37.5716 53.4658 37.7779 54.0929L53.5 57.7269L69.3551 54.0621C69.5734 53.432 69.9364 52.8514 70.4274 52.372L76.2582 46.6806C76.3701 46.5184 76.5132 46.3799 76.6777 46.2711L82.4405 40.646C83.1132 39.9893 82.742 38.8454 81.8125 38.7102L65.211 36.2945L65.2108 36.2944C63.7956 36.0883 62.572 35.1981 61.939 33.9138L54.5146 18.8494ZM78.2847 49.1948L84.5462 50.5509L74.5217 52.868L78.2847 49.1948ZM39.1236 71.6425L16.7454 66.5494C16.4592 66.2131 16.0345 66 15.5605 66C15.3347 66 15.1201 66.0484 14.9263 66.1354L4.73688 63.8163L16.066 52.3599L50.3548 60.2853L39.1236 71.6425ZM32.9531 52.9777L22.457 50.5517L29.1433 49.1044L32.9531 52.9777ZM72.461 14.3637C73.0993 14.9156 73.1826 15.8963 72.647 16.554L68.6646 21.4446C68.129 22.1023 67.1774 22.1882 66.539 21.6363C65.9007 21.0844 65.8174 20.1037 66.353 19.446L70.3354 14.5554C70.871 13.8977 71.8226 13.8118 72.461 14.3637ZM91.6362 21.5389C92.1881 22.1772 92.1024 23.1289 91.4446 23.6645L86.5541 27.647C85.8964 28.1826 84.9157 28.0993 84.3638 27.4611C83.8119 26.8228 83.8976 25.8711 84.5554 25.3355L89.4459 21.353C90.1036 20.8174 91.0843 20.9007 91.6362 21.5389ZM35.539 14.3637C36.1774 13.8118 37.129 13.8977 37.6646 14.5554L41.647 19.446C42.1826 20.1037 42.0993 21.0844 41.461 21.6363C40.8226 22.1882 39.871 22.1023 39.3354 21.4446L35.353 16.554C34.8174 15.8963 34.9007 14.9156 35.539 14.3637ZM15.3638 21.5389C15.9157 20.9007 16.8964 20.8174 17.5541 21.353L22.4446 25.3355C23.1024 25.8711 23.1881 26.8228 22.6362 27.4611C22.0843 28.0993 21.1036 28.1826 20.4459 27.647L15.5554 23.6645C14.8976 23.1289 14.8119 22.1772 15.3638 21.5389Z"
-                fill="#DC3545"
+                fill="#E4405F"
               />
             </svg>
             <h2>You Are All Set!</h2>

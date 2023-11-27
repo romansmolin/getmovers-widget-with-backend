@@ -42,11 +42,11 @@ h2 + .input-container {
   font-weight: 600;
   color: #263238;
   opacity: 0.5;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .input-container button.classic {
-  background-color: #dc3545;
+  background-color: #E4405F;
   border: none;
   font-size: 20px;
   font-weight: 600;
@@ -56,7 +56,7 @@ h2 + .input-container {
   position: relative;
   transition: background-color 0.3s;
   border-radius: 5px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100%;
 }
 
@@ -70,7 +70,7 @@ h2 + .input-container {
 }
 
 .input-container button.classic:hover {
-  background-color: #b51827;
+  background-color: #ba2945;
 }
 
 .input-container button.classic:hover svg {
@@ -84,7 +84,7 @@ h2 + .input-container {
 }
 
 .phone-number > .disclaimer {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 input#phone {
@@ -105,12 +105,12 @@ input#phone {
   font-size: 28px;
   font-weight: 600;
   border-radius: 0px;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 0px;
 }
 
 .phone-verification.input-container .otp-input__wrapper .otp-input.error {
-  border: 1px solid #dc3545;
+  border: 1px solid #E4405F;
 }
 
 .phone-verification.input-container

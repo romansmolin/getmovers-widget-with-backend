@@ -54,15 +54,15 @@
 }
 
 .vertical__wrapper .vertical__wrapper__block:hover {
-  border-color: #dc3545;
+  border-color: #E4405F;
 }
 
 .vertical__wrapper .vertical__wrapper__block:hover + button {
-  border-top-color: #dc3545;
+  border-top-color: #E4405F;
 }
 
 .vertical__wrapper .vertical__wrapper__block:hover p {
-  color: #dc3545;
+  color: #E4405F;
 }
 
 .vertical__wrapper .vertical__wrapper__block:hover svg {
@@ -71,5 +71,5 @@
 }
 
 .vertical__wrapper .vertical__wrapper__block:hover svg path {
-  fill: #dc3545;
+  fill: #E4405F;
 }
