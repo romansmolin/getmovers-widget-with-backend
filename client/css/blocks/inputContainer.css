@@ -20,6 +20,7 @@ h2 + .input-container {
 
 .input-container .input-wrapper input {
   width: 100%;
+  font-family: "Poppins", sans-serif;
 }
 
 .input-container .input-wrapper .input-icon {
@@ -35,6 +36,9 @@ h2 + .input-container {
   padding-left: 16px;
   font-size: 16px;
   border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #263238;
 }
 
 .input-container input::placeholder {
@@ -43,6 +47,11 @@ h2 + .input-container {
   color: #263238;
   opacity: 0.5;
   font-family: "Poppins", sans-serif;
+}
+
+.input-container input[type="text"]:focus-visible {
+  border: 0.1px solid #E4405F;
+  outline: 0;
 }
 
 .input-container button.classic {
@@ -107,6 +116,11 @@ input#phone {
   border-radius: 0px;
   font-family: "Poppins", sans-serif;
   padding: 0px;
+}
+
+.phone-verification.input-container .otp-input__wrapper .otp-input:focus-visible {
+  border: 0.1px solid #E4405F;
+  outline: 0;
 }
 
 .phone-verification.input-container .otp-input__wrapper .otp-input.error {
